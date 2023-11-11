@@ -2,7 +2,8 @@
 # numpy ndarray demo
 #
 # - (B, G, R) color model in cv
-# - ndarray range index
+# - ROI (regin of interest) with ndarray range index
+# - cvtColor(f, cv.COLOR_BGR2GRAY)
 #
 import cv2 as cv
 import numpy as np
