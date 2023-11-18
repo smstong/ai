@@ -4,8 +4,7 @@ import cv2 as cv
 
 mainWin = "MainWindow"
 
-#faceCascade = cv.CascadeClassifier("haardata/haarcascade_frontalface_default.xml")
-faceCascade = cv.CascadeClassifier("haardata/haarcascade_eye.xml")
+faceCascade = cv.CascadeClassifier("haardata/haarcascade_frontalface_default.xml")
 cap = cv.VideoCapture(0, cv.CAP_DSHOW)
 cap.set(cv.CAP_PROP_FRAME_WIDTH, 800)
 cap.set(cv.CAP_PROP_FRAME_HEIGHT, 600)
