@@ -11,8 +11,18 @@ knownFaces = [
         "code": None,
     },
     {
+        "file": "FumioKishida.jpg", 
+        "name": "Fumio Kishida",
+        "code": None,
+    },
+    {
         "file": "XiJinPing.jpg", 
-        "name": "Xi Jinping",
+        "name": "Xi Dada",
+        "code": None,
+    },
+    {
+        "file": "JustinTrudeau.jpg", 
+        "name": "Justin Trudeau",
         "code": None,
     },
 ]
@@ -51,13 +61,13 @@ def recognize(filePath):
         cv.rectangle(frame, (left,top), (right,bottom), (255,0,0), 2)
 
         # draw face name
-        matches = fr.compare_faces(knownCodes, code)
+        matches = fr.compare_faces(knownCodes, code, tolerance=0.5)
         name = "unknown"
         for i in range(len(matches)):
             if matches[i] == True:
                 name = knownFaces[i]['name']
                 break
-        cv.putText(frame, name, (left, top), cv.FONT_HERSHEY_SCRIPT_SIMPLEX, 1, (0,0,255), 2)
+        cv.putText(frame, name, (left, top), cv.FONT_HERSHEY_SIMPLEX, 0.6, (0,0,255), 2)
 
     cv.imshow('face recog', frame)
 
@@ -68,6 +78,6 @@ for face in knownFaces:
     #print(face)
 
 # recognize unknow faces
-recognize("face-images/unknown/u005.jpg")
+recognize("face-images/unknown/u003.jpg")
 
 cv.waitKey(0)
