@@ -111,10 +111,9 @@ cap.set(cv.CAP_PROP_FRAME_HEIGHT, 600)
 while True:
     _, frame = cap.read()
     frame = cv.flip(frame, 1)
+    frameRGB = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
 
     detect_async(frame)
-
-    frameRGB = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
     frameRGB = draw_landmarks_on_image(frameRGB, R)
     frameRGB = count_fingers_raised(frameRGB, R)
 
