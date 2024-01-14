@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        (() => {
+        })();
+        window.addEventListener("DOMContentLoaded", () => {
+            document.querySelector("#btnStart").addEventListener("click", (ev) => {
+                startup();
+                ev.preventDefault();
+            });
+            videoE = document.querySelector("#video");
+            alert(videoE.classList);
+            videoE.addEventListener("canplay", (e)=>{
+
+            });
+        });
+        async function startup() {
+            videoE = document.querySelector("#video");
+            canvasE = document.querySelector("#canvas");
+            try {
+                stream = await navigator.mediaDevices.getUserMedia({
+                    video: true, audio: false
+                });
+                videoE.srcObject = stream;
+                videoE.play();
+            } catch (e) {
+                alert(e);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="cam">
+        <video id="video" class="videoc a b c"></video>
+        <button id="btnStart">Start</button>
+    </div>
+
+    <canvas id="canvas" style="display: none;"></canvas>
+
+    <div class="output">
+        <img id="photo" />
+    </div>
+</body>
+
+</html>
