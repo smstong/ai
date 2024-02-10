@@ -1,0 +1,5 @@
+function createCanvas(){
+
+}
+
+export {createCanvas}
