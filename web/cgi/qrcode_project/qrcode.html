@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<title>QR code generator</title>
+		<link rel="stylesheet" href="./qrcode.css">
+		<script src="./qrcode.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<form id="mainForm" action="cgi-bin/qrcode.py">
+				<h3>message to encode</h3>
+				<textarea id="msg" class="inputarea" name="msg">hello</textarea><br/>
+				<input id="submit" type="submit" value="ok" />
+			</form>
+			<div>
+				<img id="qrimg" src="" alt="qrcode image" />
+			</div>
+		</div>
+	</body>
+</html>

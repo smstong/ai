@@ -1,0 +1,26 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: black;
+}
+
+#submit {
+	width: 100px;
+	height: 40px;
+}
+.wrapper {
+	margin: auto;
+	width: 90%;
+	background: white;
+	padding: 20px;
+}
+.inputarea {
+	width: 400px;
+	height: 300px;
+}
+#qrimg {
+	display: none;
+}
